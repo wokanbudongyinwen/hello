@@ -4,38 +4,32 @@ import fetch from '../config/fetch'
  * 登陆
  */
 
-export const login = data => fetch('/admin/login', data, 'POST');
+export const login = data => fetch('login.aspx', data, 'GET','get');
 
 /**
- * 退出
+ * 注册
  */
 
-export const signout = () => fetch('/admin/signout');
+export const usePost = data => fetch('zc.aspx',data, 'GET','get');
 
 /**
- * 获取用户信息
+ * token
  */
 
-export const getAdminInfo = () => fetch('/admin/info');
+export const token = data => fetch('tokyz.aspx',data ,'POST','post');
 
 /**
- * api请求量
+ * 获取权限
  */
 
-export const apiCount = date => fetch('/statis/api/' + date + '/count');
-
-/**
- * 所有api请求量
- */
-
-export const apiAllCount = () => fetch('/statis/api/count');
+export const qx = () => fetch('selectqx.aspx');
 
 
 /**
- * 所有api请求信息
+ * 商户列表
  */
 
-export const apiAllRecord = () => fetch('/statis/api/all');
+export const merchantsList = () => fetch('selectsh.aspx',data,'post','post');
 
 /**
  * 用户注册量

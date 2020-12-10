@@ -13,7 +13,7 @@
                         <el-input type="password" placeholder="密码" v-model="loginForm.password"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登陆</el-button>
+                        <el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登录</el-button>
                     </el-form-item>
                 </el-form>
                 <p class="tip">温馨提示：</p>
@@ -59,8 +59,9 @@
             async submitForm(formName) {
                 this.$refs[formName].validate(async (valid) => {
                     if (valid) {
-                        const res = await login({user_name: this.loginForm.username, password: this.loginForm.password})
-                        if (res.status == 1) {
+
+                        const res = await login({nm: this.loginForm.username, pw: this.loginForm.password})
+                        if (res.usnm) {
                             this.$message({
                                 type: 'success',
                                 message: '登录成功'
@@ -69,7 +70,7 @@
                         }else{
                             this.$message({
                                 type: 'error',
-                                message: res.message
+                                message: res.jg
                             });
                         }
                     } else {
@@ -85,7 +86,7 @@
         },
         watch: {
             adminInfo: function (newValue){
-                if (newValue.id) {
+                if (newValue.nm) {
                     this.$message({
                         type: 'success',
                         message: '检测到您之前登录过，将自动登录'

@@ -15,11 +15,13 @@
         <el-col :span="4"><div class="data_list"><span class="data_num">{{allOrderCount}}</span> 订单</div></el-col>
         <el-col :span="4"><div class="data_list"><span class="data_num">{{allAdminCount}}</span> 管理员</div></el-col>
     </el-row>
+        <e-tend :sevenDay="sevenDay" :sevenDate="sevenDate" style="margin-top: 20px"></e-tend>
 </section>
 </div>
 </template>
 <script>
     import headTop from "../components/headTop.vue"
+    import eTend from "../components/echatTendency.vue"
     export default {
         data(){
             return {
@@ -29,12 +31,13 @@
                 allUserCount: 20,
                 allOrderCount: 10,
                 allAdminCount: 20,
-                sevenDay: [],
-                sevenDate: [[],[],[]],
+                sevenDay: ["2020-12-01","2020-12-04","2020-12-07","2020-12-10","2020-12-13","2020-12-16","2020-12-19"],
+                sevenDate: [[39,25,63,84,55,44,98],[45,65,78,96,25,34,79],[88,77,66,22,11,55,33]],
             }
         },
         components: {
-            headTop
+            headTop,
+            eTend
         },
         mounted(){
         },

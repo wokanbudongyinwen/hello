@@ -11,11 +11,11 @@ let routerMode = 'hash';
 let baseImgPath;
 
 if (process.env.NODE_ENV == 'development') {
-    baseUrl = '';
-    baseImgPath = '/img/';
+    baseUrl = 'http://bdzl.ynbaidu.cn/';
+    baseImgPath = 'http://bdzl.ynbaidu.cn/img/';
 }else{
-    baseUrl = '//elm.cangdu.org';
-    baseImgPath = '//elm.cangdu.org/img/';
+    baseUrl = 'http://bdzl.ynbaidu.cn/';
+    baseImgPath = 'http://bdzl.ynbaidu.cn/img/';
 }
 
 export {
